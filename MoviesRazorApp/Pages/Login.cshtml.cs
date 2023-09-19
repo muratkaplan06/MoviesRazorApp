@@ -28,8 +28,6 @@ namespace MoviesRazorApp.Pages
                 return Page();
             }
 
-            var i = _loginViewModel.RememberMe;
-
             var result = _signInManager.PasswordSignInAsync(
                     _loginViewModel.EmailAddress,
                     _loginViewModel.Password,

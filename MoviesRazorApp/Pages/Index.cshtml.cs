@@ -13,7 +13,8 @@ namespace MoviesRazorApp.Pages
 
         public void OnGet()
         {
-
+            Response.Redirect(
+                User.Identity.IsAuthenticated ? "Movies" : "Login");
         }
     }
 }
