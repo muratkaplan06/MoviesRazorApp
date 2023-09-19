@@ -27,6 +27,20 @@
                         </li>
                     </ul>
                 </div>
+                <div>
+                    <ul class="navbar-nav flex-grow-1">
+                        @if(User.Identity.IsAuthenticated)
+                        {
+                            <form method="post" asp-page="/Login" asp-page-handler="Logout" asp-route-returnUrl="@Url.Page("Login")">
+                                <button type="submit" class="btn btn-link nav-link">Logout</button>
+                                <span class="tagline">@User.Identity.Name</span>
+                            </form>
+                        } else {
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Register">Register</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
+                        }
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>

@@ -6,3 +6,41 @@
 
 <h1>@ViewData["Title"]</h1>
 <hr />
+ <div class="container">
+     <div class="row">
+     
+         <div class="col-6 offset-3">
+     
+             <form method="post">
+                <div asp-validation-summary="All" class="input-validation-error"></div>
+                 <div class="mb-3">
+                     <label for="Email" class="form-label">Email</label>
+                     <input name="_loginViewModel.EmailAddress" type="text" class="form-control" id="Email" placeholder="Enter Email">
+                     <span asp-validation-for="@Model._loginViewModel.EmailAddress" class="text-danger"></span>
+                 </div>
+
+                 <div class="mb-3">
+                     <label for="Password" class="form-label">Password</label>
+                     <input name="_loginViewModel.Password" type="password" class="form-control" id="Password" placeholder="Enter Password">
+                     <span asp-validation-for="@Model._loginViewModel.Password" class="text-danger"></span>
+
+                 </div>
+                 
+                 <div class="mb-3">
+                     <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                     <input name="_loginViewModel.ConfirmPassword" type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password">
+                     <span asp-validation-for="@Model._loginViewModel.ConfirmPassword" class="text-danger"></span>
+                 </div>
+
+                 <div class="mb-3">
+                     <input name="_loginViewModel.RememberMe" type="checkbox"  id="RememberMe" value="true" />
+                     <label for="RememberMe">Remember Me</label>
+                     <span asp-validation-for="@Model._loginViewModel.RememberMe" class="field-validation-error"></span>
+                 </div>
+
+                 <button type="submit" class="btn btn-primary">Login</button>
+
+             </form>
+         </div>
+     </div>
+</div>

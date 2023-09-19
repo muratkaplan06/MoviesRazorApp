@@ -28,9 +28,14 @@ namespace MoviesRazorApp.Pages
         {
             _moviesService = moviesService;
         }
+
+        public void OnGetMyOnClick()
+        {
+            string value = "stop";
+        }
         public void OnGet()
         {
-            //Title = "Welcome to the Add Movie Page";
+            
         }
 
         public IActionResult OnPost()
@@ -49,7 +54,6 @@ namespace MoviesRazorApp.Pages
             };
             _moviesService.Add(movie);
 
-            //return Page();
             return RedirectToPage("Movies");
         }
     }
