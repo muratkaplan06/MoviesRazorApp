@@ -1,0 +1,31 @@
+﻿@page
+@model MoviesRazorApp.Pages.AddMovieModel
+@{
+  ViewData["Title"] = "Add Movie";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+@* <a asp-page-handler="MyOnClick"> Click Me </a> *@
+<div class="row">
+    <div class="md-6 offset-3">
+        <form method="post">
+            <div class="mb-3">
+                <label for="Title" class="form-label">Title</label>
+                <input name="Movie.Title" type="text" class="form-control" id="Title" placeholder="Enter Title">
+                <span asp-validation-for="@Model.Movie.Title" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="Rate" class="form-label">Rate</label>
+                <input name="Movie.Rate" type="text" class="form-control" id="Rate" placeholder="Enter Rate">
+                <span asp-validation-for="@Model.Movie.Rate" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="Description" class="form-label">Description</label>
+                <textarea name="Movie.Description" class="form-control" id="Description" rows="3"></textarea>
+                <span asp-validation-for="@Model.Movie.Description" class="text-danger"></span>  
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+</div>
